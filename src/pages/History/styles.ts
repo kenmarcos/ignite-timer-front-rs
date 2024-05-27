@@ -58,6 +58,11 @@ export const HistoryList = styled.div`
   }
 `;
 
+export const HistoryEmpty = styled.p`
+  color: ${({ theme }) => theme["gray-400"]};
+  text-align: center;
+`;
+
 enum STATUS_COLORS {
   "yellow-500",
   "green-500",
@@ -65,7 +70,7 @@ enum STATUS_COLORS {
 }
 
 interface StatusProps {
-  statusNumber: (typeof STATUS_COLORS)[keyof typeof STATUS_COLORS];
+  $statusNumber: (typeof STATUS_COLORS)[keyof typeof STATUS_COLORS];
 }
 
 export const Status = styled.span<StatusProps>`
@@ -78,7 +83,7 @@ export const Status = styled.span<StatusProps>`
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
-    background-color: ${({ theme, statusNumber }) =>
-      theme[STATUS_COLORS[statusNumber]]};
+    background-color: ${({ theme, $statusNumber }) =>
+      theme[STATUS_COLORS[$statusNumber]]};
   }
 `;
