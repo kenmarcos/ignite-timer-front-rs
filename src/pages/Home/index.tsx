@@ -43,12 +43,12 @@ export const Home = () => {
 
   const handleCreateNewCycle = (data: NewCycleFormData) => {
     createNewCycle(data);
+
+    reset();
   };
 
   const handleInterruptCycle = () => {
     interruptCurrentCycle();
-
-    reset();
   };
 
   return (

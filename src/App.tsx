@@ -4,6 +4,7 @@ import { GlobalStyle } from "./styles/global";
 import { BrowserRouter } from "react-router-dom";
 import { Router } from "./routes/Router";
 import { CyclesContextProvider } from "./contexts/CyclesContext";
+import { CountdownContextProvider } from "./contexts/CountdownContext";
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
 
       <BrowserRouter>
         <CyclesContextProvider>
-          <Router />
+          <CountdownContextProvider>
+            <Router />
+          </CountdownContextProvider>
         </CyclesContextProvider>
       </BrowserRouter>
     </ThemeProvider>
